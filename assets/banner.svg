@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="260" viewBox="0 0 900 260" role="img" aria-label="habit-tracker-cli - a simple command-line habit tracker">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0c1411"/>
+      <stop offset="100%" stop-color="#13241c"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .t { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .m { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; }
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    .line { opacity: 0; animation: appear 7s ease-in-out infinite; }
+    .l2 { animation-delay: .8s; }
+    .l3 { animation-delay: 1.6s; }
+    @keyframes appear { 0%,8% { opacity: 0; transform: translateX(-8px); } 20%,88% { opacity: 1; transform: translateX(0); } 100% { opacity: 0; } }
+    .tick { stroke-dasharray: 24; stroke-dashoffset: 24; animation: tick 7s ease-in-out infinite; animation-delay: 1.2s; }
+    @keyframes tick { 0%,10% { stroke-dashoffset: 24; } 25%,88% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 24; } }
+    .flame { transform-box: fill-box; transform-origin: center bottom; animation: flame 1.4s ease-in-out infinite; }
+    @keyframes flame { 0%,100% { transform: scale(1) rotate(-3deg); } 50% { transform: scale(1.15) rotate(3deg); } }
+    .day { animation: day 7s ease-in-out infinite; opacity: .25; }
+    .d2 { animation-delay: .3s; } .d3 { animation-delay: .6s; } .d4 { animation-delay: .9s; } .d5 { animation-delay: 1.2s; }
+    @keyframes day { 0%,10% { opacity: .25; } 25%,88% { opacity: 1; } 100% { opacity: .25; } }
+  </style>
+
+  <rect width="900" height="260" rx="18" fill="url(#bg)"/>
+  <rect x="1" y="1" width="898" height="258" rx="17" fill="none" stroke="#23382d"/>
+
+  <!-- title -->
+  <text class="t" x="50" y="108" font-size="46" font-weight="800" fill="#ffffff">habit-tracker</text>
+  <text class="t" x="50" y="150" font-size="18" fill="#8fc9a8">Build streaks. One command a day.</text>
+  <text class="m" x="50" y="194" font-size="14" fill="#5f9a7a">Python 3.8+  ·  zero dependencies</text>
+
+  <!-- flame + streak days -->
+  <g transform="translate(50,214)">
+    <rect class="day" x="0" y="0" width="22" height="22" rx="5" fill="#34d399"/>
+    <rect class="day d2" x="30" y="0" width="22" height="22" rx="5" fill="#34d399"/>
+    <rect class="day d3" x="60" y="0" width="22" height="22" rx="5" fill="#34d399"/>
+    <rect class="day d4" x="90" y="0" width="22" height="22" rx="5" fill="#34d399"/>
+    <rect class="day d5" x="120" y="0" width="22" height="22" rx="5" fill="#34d399"/>
+  </g>
+  <g class="flame" transform="translate(206,226)">
+    <path d="M0 -14 C6 -6 10 -2 8 6 C7 11 3 14 0 14 C-4 14 -8 10 -7 4 C-6 -1 -2 -4 0 -14 Z" fill="#ff9f43"/>
+    <path d="M0 -2 C3 2 4 5 2 8 C1 9 -1 9 -2 8 C-4 5 -2 2 0 -2 Z" fill="#ffd166"/>
+  </g>
+
+  <!-- terminal -->
+  <rect x="480" y="34" width="390" height="192" rx="12" fill="#070b09" stroke="#23382d"/>
+  <circle cx="500" cy="54" r="5" fill="#ff5f57"/>
+  <circle cx="518" cy="54" r="5" fill="#febc2e"/>
+  <circle cx="536" cy="54" r="5" fill="#28c840"/>
+
+  <text class="m" x="500" y="96" font-size="13" fill="#34d399">$ <tspan fill="#e6f4ec">python habit.py list</tspan></text>
+
+  <g class="line">
+    <text class="m" x="500" y="128" font-size="13" fill="#e6f4ec">[ ] read          streak:  0</text>
+  </g>
+  <g class="line l2">
+    <text class="m" x="500" y="152" font-size="13" fill="#e6f4ec">[ ] workout       streak:  1</text>
+  </g>
+  <g class="line l3">
+    <text class="m" x="500" y="176" font-size="13" fill="#e6f4ec">[   ] drink water   streak:  3</text>
+    <path class="tick" d="M510 171 L515 176 L524 164" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <rect class="cursor" x="500" y="196" width="8" height="14" fill="#34d399"/>
+</svg>
