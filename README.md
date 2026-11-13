@@ -1,5 +1,7 @@
 <div align="center">
 
+<p align="center"><img src="assets/readme-banner.svg" alt="Animated Habit Tracker banner" width="100%"></p>
+
 <img src="assets/banner.svg" alt="habit-tracker-cli - a simple command-line habit tracker" width="100%"/>
 
 <br/>
@@ -12,7 +14,7 @@
 
 A simple command-line habit tracker written in Python. No dependencies, just Python 3.8+.
 
-## 🚀 Usage
+##  Usage
 
 ```bash
 python habit.py add "drink water"     # add a habit
@@ -28,11 +30,11 @@ python habit.py remove "drink water"  # delete a habit
 [ ] read                      streak:   0  total: 2
 ```
 
-## 💾 Data
+##  Data
 
 Data is stored in `~/.habits.json`. Set the `HABITS_FILE` environment variable to use another location.
 
-## 🧪 Tests
+##  Tests
 
 ```bash
 python -m unittest test_habit.py
